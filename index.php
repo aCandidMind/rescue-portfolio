@@ -1,11 +1,11 @@
 <?php
 /* 
 Plugin Name: Rescue Portfolio
-Plugin URI: http://rescuethemes.com
-Description: Adds a portfolio custom post type and portfolio shortcode for themes developed by <a href="http://rescuethemes.com">Rescue Themes</a>
+Plugin URI: https://github.com/RescueThemes/rescue-portfolio
+Description: Adds a portfolio custom post type and portfolio shortcode for themes developed by <a href="http://themeforest.net/user/RescueThemes?ref=RescueThemes">Rescue Themes</a>
 Author: Rescue Themes
 Version: 1.0
-Author URI: http://rescuethemes.com 
+Author URI: http://themeforest.net/user/RescueThemes?ref=RescueThemes
 */
 
 /*---------------------------------------------------------*/
@@ -44,5 +44,3 @@ function rescue_port_style()
 }
 	
 add_action('init', 'rescue_port_style');
-
-/* EOF */
