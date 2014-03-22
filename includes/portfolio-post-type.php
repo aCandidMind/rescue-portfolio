@@ -78,7 +78,7 @@ function post_type()
 		// Set Menu Position for where it displays in the navigation bar
 		'menu_position' => null, 
 		
-		'menu_icon' => '"' . WP_PLUGIN_URL .'/rescue-portfolio/includes/portfolio_icon.png'. '"',
+		'menu_icon' => '"' . plugins_url( 'includes/portfolio_icon.png' , dirname(__FILE__) ) . '"',
 		
 		// Allow the portfolio to support a Title, Editor, Thumbnail
 		'supports' => 
