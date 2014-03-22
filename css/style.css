@@ -1,0 +1,59 @@
+/*** Basic Styles ***/
+.rescue_portfolio #Grid .mix{
+    opacity: 0;
+    display: none;
+}
+.rescue_portfolio {
+	margin-top: 20px;
+}
+.rescue_portfolio ul {
+	list-style-type: none!important;
+}
+
+/* Filter */
+.rescue_portfolio .filter_wrap  h5 {
+
+}
+.rescue_portfolio .filter_wrap ul {
+	margin: 20px 0px 40px 0;
+}
+.rescue_portfolio ul #filter_title {
+	color: #222222;
+	text-transform: uppercase;
+}
+.rescue_portfolio .filter_wrap ul li {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #676765;
+	display: inline;
+	margin-right: 20px;
+}
+.rescue_portfolio .filter_wrap ul li.active {
+	border-bottom: thin dotted #ccc;
+	color: #222222;
+}
+.rescue_portfolio .filter_wrap ul li:hover {
+	text-decoration: none;
+	color: #222222;
+}
+
+/* Main Grid */
+.rescue_portfolio ul#Grid li p {
+	text-align:center;
+	margin: 20px 0;
+}
+.rescue_portfolio .portfolio_title a {
+	font-size: 18px;
+}
+.rescue_portfolio img {
+/*	height: 220px;*/
+}
+
+/* Single Page */
+.portfolio .category_details, .portfolio .tags {
+	display:none;
+}
+
+.small-block-grid-3 > li:nth-of-type(3n+1) {
+	clear: none!important;
+}
