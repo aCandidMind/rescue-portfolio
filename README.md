@@ -22,15 +22,10 @@ Installation
 Frequently Asked Questions
 ================
 
-= Can I display the portfolio with a shortcode?  =
+Can I display the portfolio with a shortcode?
 
 Yep, you can use the [rescue_portfolio] shortcode in your pages and posts.
 
-= Where can I check out other themes and plugins by Rescue Themes?  =
+Where can I check out other themes and plugins by Rescue Themes?
 
-I'm glad you asked! http://rescuethemes.com/themes/
-
-================ Changelog ================
-
-= 1.0 =
-* Initial release
+I'm glad you asked! http://themeforest.net/user/RescueThemes/portfolio
