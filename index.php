@@ -1,11 +1,11 @@
 <?php
 /* 
-Plugin Name: Rescue Portfolio
-Plugin URI: https://github.com/RescueThemes/rescue-portfolio
-Description: Adds a portfolio custom post type and portfolio shortcode for themes developed by <a href="http://themeforest.net/user/RescueThemes?ref=RescueThemes">Rescue Themes</a>
-Author: Rescue Themes
-Version: 1.0
-Author URI: http://themeforest.net/user/RescueThemes?ref=RescueThemes
+ Plugin Name: Rescue Portfolio
+ Plugin URI: https://github.com/RescueThemes/rescue-portfolio
+ Description: Adds a portfolio custom post type and portfolio shortcode for themes developed by <a href="http://themeforest.net/user/RescueThemes?ref=RescueThemes">Rescue Themes</a>
+ Author: Rescue Themes
+ Version: 1.1
+ Author URI: http://themeforest.net/user/RescueThemes?ref=RescueThemes
 */
 
 /*---------------------------------------------------------*/
@@ -44,3 +44,15 @@ function rescue_port_style()
 }
 	
 add_action('init', 'rescue_port_style');
+
+/*----------------------------------------------------*/
+/*  Image Resizing Script - v1.1
+/*----------------------------------------------------*/
+if ( ! function_exists( 'rescue_image_resize' ) ) :
+
+    function rescue_image_resize() {
+        require (RESCUE_PORTFOLIO_TEMPLATE_DIR . "/includes/BFI_Thumb.php");
+    }
+    add_action( 'after_setup_theme', 'rescue_image_resize' );
+    
+endif;
