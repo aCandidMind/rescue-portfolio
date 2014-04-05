@@ -51,11 +51,14 @@
               // print out each of the categories in our new format
               echo $term_list;
             }
+
+            $theme_name = wp_get_theme(); // - v1.2
+
           ?>
         </ul><!-- .filter -->
     </div><!-- .filter_wrap -->
 
-        <ul id="Grid" class="small-block-grid-3">
+        <ul id="Grid" class="<?php if ($theme_name=='Advocator') echo "small-block-grid-3"; elseif ($theme_name=='Legislator') echo "large-block-grid-4"; else {echo "small-block-grid-3";} // - v1.2 ?>">
       
           <?php
             
@@ -71,11 +74,57 @@
             $thumb = get_post_thumbnail_id();
             $img_url = wp_get_attachment_url( $thumb ); //get img URL
 
-            $params = array( 'width' => 340, 'height' => 340 ); 
-            $image = bfi_thumb( "$img_url", $params );
-          ?>
-          
-              <li data-id="id-<?php echo $count; ?>" class="mix <?php foreach ($terms as $term) { echo strtolower(preg_replace('/\s+/', '-', $term->slug)). ' '; } ?>">
+             ?>
+
+            <li data-id="id-<?php echo $count; ?>" class="mix <?php foreach ($terms as $term) { echo strtolower(preg_replace('/\s+/', '-', $term->slug)). ' '; } ?>">
+
+            <?php if ($theme_name == 'Advocator') { // - v1.2 ?>
+                
+                  <?php 
+                    // Check if wordpress supports featured images, and if so output the thumbnail
+                    if ( (function_exists('has_post_thumbnail')) && (has_post_thumbnail()) ) : 
+
+                    $params = array( 'width' => 340, 'height' => 340 ); 
+                    $image = bfi_thumb( "$img_url", $params );
+
+                  ?>
+                    
+                    <?php // Output the featured image ?>
+                    <a href="<?php echo $img_url ?>" class="fancybox image_hover" rel="gallery_group" title="<?php the_title(); ?>"><img alt="" src="<?php echo $image ?>" /></a>             
+                                      
+                  <?php endif; ?> 
+                  
+                  <?php // Output the title of each portfolio item ?>
+                  <p><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></p>
+  
+          <?php } elseif ($theme_name == 'Legislator') { // - v1.2 ?>
+                
+                  <div class="view view-first">
+                  
+                    <?php // Check for featured image
+                      if ( (function_exists('has_post_thumbnail')) && (has_post_thumbnail()) ) : 
+
+                      $params = array( 'width' => 245, 'height' => 245 ); 
+                      $image = bfi_thumb( "$img_url", $params ); 
+
+                      ?>
+
+                      <img alt="<?php echo get_the_title(); ?>" src="<?php echo $image ?>" />
+                                       
+                    <?php  endif; //end image check  ?> 
+
+                    <div class="mask view-first">
+                        <h2><?php echo get_the_title(); ?></h2>
+
+                        <!-- Fancybox Image -->
+                        <a href="<?php echo $img_url ?>" class="fancybox info" rel="gallery_group" title="<?php echo get_the_title(); ?>"><?php _e('View Larger','rescue');?></a>
+                        <!-- Permalink -->
+                        <a href="<?php the_permalink(); ?>" class="info" rel="gallery_group" title="<?php echo get_the_title(); ?> Details"><?php _e('Details','rescue');?></a>
+                    </div>
+
+                    </div><!-- .view .view-first -->     
+
+          <?php } else { // - v1.2 ?>
                 
                   <?php 
                     // Check if wordpress supports featured images, and if so output the thumbnail
@@ -83,18 +132,19 @@
                   ?>
                     
                     <?php // Output the featured image ?>
-                    <a href="<?php echo $img_url ?>" class="fancybox image_hover" rel="gallery_group" title="<?php the_title(); ?>"><img alt="" src="<?php echo $image ?>" /></a>                
+                    <a href="<?php echo $img_url ?>" class="fancybox image_hover" rel="gallery_group" title="<?php the_title(); ?>"><img alt="" src="<?php echo $image ?>" /></a>             
                                       
                   <?php endif; ?> 
                   
                   <?php // Output the title of each portfolio item ?>
                   <p><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></p>
-                  
-              </li>
-  
+
+          <?php } ?>
+
+              </li>   
           
           <?php $count++; // Increase the count by 1 ?>   
-          <?php endwhile; endif; // END the Wordpress Loop ?>
+          <?php endwhile; endif; // End WP Loop ?>
           <?php wp_reset_query(); // Reset the Query Loop?>
       
         </ul><!-- #Grid -->

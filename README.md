@@ -6,7 +6,7 @@ A simple portfolio plugin using custom post types and MixItUp sorting developed 
 Description
 ================
 
-This portfolio plugin is designed to work with themes by Rescue Themes. If your theme is using the Zurb Foundation framework, it's also responsive. You're welcome to use it with a 3rd party theme but you may need to fiddle with the styling.
+This portfolio plugin is designed to work with themes by Rescue Themes. If your theme is using the Zurb Foundation framework, it's also responsive. You're welcome to use it with other themes but you may need to fiddle with the styling.
 
 When activated, this plugin will add a custom post type called 'Portfolio' to your WordPress dashboard. The custom post will allow you to create sorting categories for your portfolio posts. On the front end, it will display the featured image, title, and excerpt for each individual portfolio post.
 
