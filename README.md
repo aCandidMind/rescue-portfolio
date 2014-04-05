@@ -13,7 +13,7 @@ When activated, this plugin will add a custom post type called 'Portfolio' to yo
 Installation
 ================
 
-1. Upload the `rescue-portfolio` folder to the `/wp-content/plugins/` directory
+1. Upload the plugin to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Create a new page (a 'Full Width' page works best), naming it whatever you'd like (ex. Gallery)
 4. Paste the portfolio's shortcode in that page's content area. The shortcode is [rescue_portfolio]
