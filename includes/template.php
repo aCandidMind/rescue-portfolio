@@ -58,7 +58,7 @@
         </ul><!-- .filter -->
     </div><!-- .filter_wrap -->
 
-        <ul id="Grid" class="<?php if ($theme_name=='Advocator') echo "small-block-grid-3"; elseif ($theme_name=='Legislator') echo "large-block-grid-4"; else {echo "small-block-grid-3";} // - v1.2 ?>">
+        <ul id="Grid" class="">
       
           <?php
             

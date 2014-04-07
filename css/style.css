@@ -8,12 +8,10 @@
 }
 .rescue_portfolio ul {
 	list-style-type: none!important;
+	margin-left: 0;
 }
 
 /* Filter */
-.rescue_portfolio .filter_wrap  h5 {
-
-}
 .rescue_portfolio .filter_wrap ul {
 	margin: 20px 0px 40px 0;
 }
@@ -38,6 +36,9 @@
 }
 
 /* Main Grid */
+.rescue_portfolio ul#Grid li {
+	margin-right: .5em;
+}
 .rescue_portfolio ul#Grid li p {
 	text-align:center;
 	margin: 20px 0;
