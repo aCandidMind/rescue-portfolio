@@ -84,7 +84,7 @@
                     // Check if wordpress supports featured images, and if so output the thumbnail
                     if ( (function_exists('has_post_thumbnail')) && (has_post_thumbnail()) ) : 
 
-                    $params = array( 'width' => 340, 'height' => 340 ); 
+                    $params = array( 'width' => 280, 'height' => 210 ); 
                     $image = bfi_thumb( "$img_url", $params );
 
                   ?>
