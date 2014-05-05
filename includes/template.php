@@ -126,13 +126,16 @@
 
           <?php } else { // - v1.2 ?>
                 
-                  <?php 
-                    // Check if wordpress supports featured images, and if so output the thumbnail
-                    if ( (function_exists('has_post_thumbnail')) && (has_post_thumbnail()) ) : 
-                  ?>
+                    <?php // Check for featured image
+                      if ( (function_exists('has_post_thumbnail')) && (has_post_thumbnail()) ) : 
+
+                      $params = array( 'width' => 250, 'height' => 250 ); 
+                      $image = bfi_thumb( "$img_url", $params ); 
+
+                      ?>
                     
                     <?php // Output the featured image ?>
-                    <a href="<?php echo $img_url ?>" class="fancybox image_hover" rel="gallery_group" title="<?php the_title(); ?>"><img alt="" src="<?php echo $image ?>" /></a>             
+                    <a href="<?php the_permalink(); ?>" class="featured_image" title="<?php the_title(); ?>"><img alt="" src="<?php echo $image ?>" /></a>             
                                       
                   <?php endif; ?> 
                   

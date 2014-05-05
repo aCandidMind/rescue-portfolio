@@ -1,10 +1,11 @@
-=== Plugin Name ===
+=== Plugin Details ===
+Plugin Name: Rescue Portfolio
 Contributors: rescuethemes
-Donate link: http://themeforest.net/user/RescueThemes?ref=rescuethemes
+Donate link: http://rescuethemes.com
 Tags: plugin, widget, sidebar, portfolio, gallery, images, custom-post
 Requires at least: 3.0
 Tested up to: 3.9
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,13 +25,34 @@ When activated, this plugin adds a custom post type called 'Portfolio' to your W
 4. Paste the portfolio's shortcode in that page's content area. The shortcode is [rescue_portfolio]
 5. Create portfolio posts under 'Portfolio > Add Item' with a featured image, title, excerpt and away you go!
 
-Frequently Asked Questions
-================
+=== Frequently Asked Questions ===
 
-Can I display the portfolio with a shortcode?
+= Should I display the portfolio with a shortcode? =
 
-Yep, you should use the [rescue_portfolio] shortcode in your pages and posts.
+Yep, you should use the [rescue_portfolio] shortcode in a full width page.
 
-Where can I check out other themes and plugins by Rescue Themes?
+= Where can I check out other themes and plugins by Rescue Themes? =
 
-I'm glad you asked! http://themeforest.net/user/RescueThemes/portfolio?ref=rescuethemes
+I'm glad you asked! Here's our current portfolio of themes:
+
+http://rescuethemes.com/themes-plugins
+
+=== Changelog ===
+
+= 1.4 =
+* Corrected images displaying for 3rd party themes
+* Updated links
+
+= 1.3 =
+* Tested for WP 3.9
+* Corrected image size for the Advocator theme
+
+= 1.2 =
+* Added alternate displays for Advocator, Legislator, and 3rd party themes
+* Updated install directions
+
+= 1.1 =
+* Added image resizing script
+
+= 1.0 =
+* Initial release
