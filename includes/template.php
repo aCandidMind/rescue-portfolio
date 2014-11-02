@@ -62,19 +62,19 @@
             $theme_name = wp_get_theme(); // - v1.2
 
             // Query Our Database
-            $image_query_args = array( 'post_type' => 'portfolio', 'posts_per_page' =>'-1' );
+            $portfolio_query_args = array( 'post_type' => 'portfolio', 'posts_per_page' =>'-1' );
             if (!empty($filter_term_slug)) {
                 // tax_query takes an array of tax query arguments arrays
                 // see http://codex.wordpress.org/Class_Reference/WP_Query#Taxonomy_Parameters
-                $image_query_args["tax_query"] = array(
-                                                     array(
+                $portfolio_query_args["tax_query"] = array(
+                                                        array(
                                                             'taxonomy' => 'filter',
                                                             'field'    => 'slug',
                                                             'terms'    => $filter_term_slug, // make this an array for multiple terms
-                                                     )
-                                                 );
+                                                        )
+                                                     );
             }
-            $wpbp = new WP_Query($image_query_args);
+            $wpbp = new WP_Query($portfolio_query_args);
 
             // Begin The Loop
             if ($wpbp->have_posts()) : while ($wpbp->have_posts()) : $wpbp->the_post(); 
