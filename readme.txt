@@ -22,7 +22,7 @@ When activated, this plugin adds a custom post type called 'Portfolio' to your W
 1. Upload the plugin to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Create a new page (a 'Full Width' page works best), naming it whatever you'd like (ex. Gallery)
-4. Paste the portfolio's shortcode in that page's content area. The shortcode is [rescue_portfolio]
+4. Paste the portfolio's shortcode in that page's content area. The shortcode is [rescue_portfolio] or [rescue_portfolio filter=MY_SLUG]
 5. Create portfolio posts under 'Portfolio > Add Item' with a featured image, title, excerpt and away you go!
 
 === Frequently Asked Questions ===
@@ -30,6 +30,10 @@ When activated, this plugin adds a custom post type called 'Portfolio' to your W
 = Should I display the portfolio with a shortcode? =
 
 Yep, you should use the [rescue_portfolio] shortcode in a full width page.
+
+= Can I filter the included images to only those of a certain filter? =
+
+Just append filter=MY_SLUG to the shortcode. Like this [rescue_portfolio filter=MY_SLUG]. Currently only one filter can be chosen.
 
 = Where can I check out other themes and plugins by Rescue Themes? =
 
