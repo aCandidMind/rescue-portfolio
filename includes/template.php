@@ -64,6 +64,8 @@
             // Query Our Database
             $image_query_args = array( 'post_type' => 'portfolio', 'posts_per_page' =>'-1' );
             if (!empty($filter_term_slug)) {
+                // tax_query takes an array of tax query arguments arrays
+                // see http://codex.wordpress.org/Class_Reference/WP_Query#Taxonomy_Parameters
                 $image_query_args["tax_query"] = array(
                                                      array(
                                                             'taxonomy' => 'filter',
