@@ -1,6 +1,6 @@
 <div class="rescue_portfolio">
-
-<div class="filter_wrap">
+<?php if (empty($filter_term_slug)) : // filter widget is needed ?>
+    <div class="filter_wrap">
 
         <ul class="clearfix">
 
@@ -51,19 +51,22 @@
               // print out each of the categories in our new format
               echo $term_list;
             }
-
-            $theme_name = wp_get_theme(); // - v1.2
-
           ?>
         </ul><!-- .filter -->
     </div><!-- .filter_wrap -->
+<?php endif; ?>
 
         <ul id="Grid" class="">
       
           <?php
-            
+            $theme_name = wp_get_theme(); // - v1.2
+
             // Query Our Database
-            $wpbp = new WP_Query(array( 'post_type' => 'portfolio', 'posts_per_page' =>'-1' ) ); 
+            $image_query_args = array( 'post_type' => 'portfolio', 'posts_per_page' =>'-1' );
+            if (!empty($filter_term_slug)) {
+                $image_query_args["filter"] = $filter_term_slug;
+            }
+            $wpbp = new WP_Query($image_query_args);
 
             // Begin The Loop
             if ($wpbp->have_posts()) : while ($wpbp->have_posts()) : $wpbp->the_post(); 
